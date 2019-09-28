@@ -2,13 +2,13 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Домашнее задание 1,2</title>
+    <title>Домашнее задание 1,2,3</title>
   </head>
   <body>
     <!-- <script src="dz_1.js"></script> -->
 
-      <h2>Домашнее задание 2</h2>
-      <h3>Задача 1</h3>
+      <!-- <h2>Домашнее задание 2</h2>
+      <h3>Задача №1</h3>
       <p>
         <br>Дан код:
         <br>
@@ -36,7 +36,7 @@
 
       <hr>
 
-      <h3>Задача 2</h3>
+      <h3>Задача №2</h3>
       <p>
         Чему будет равен x в примере ниже?
         <br>var a = 2;
@@ -52,7 +52,7 @@
 
       <hr>
 
-      <h3>Задача 3</h3>
+      <h3>Задача №3</h3>
       <p>
         <br>Объявить две целочисленные переменные a и b и задать им произвольные начальные значения. Затем написать скрипт, который работает по следующему принципу:
           <br>
@@ -87,7 +87,7 @@
 
       <hr>
 
-      <h3>Задача 4</h3>
+      <h3>Задача №4</h3>
       <p>Присвоить переменной а значение в промежутке [0..15]. С помощью оператора switch организовать вывод чисел от a до 15.</p>
 
         <script>
@@ -244,7 +244,77 @@
         </script>
       <p>
         <a href="javascript:void(0);" onclick="taskNumberEight();">Код задачи</a>
-      </p>
+      </p> -->
+
+
+
+    <h2>Домашнее задание 3</h2>
+    <h3>Задача №1</h3>
+
+		<p>С помощью цикла while вывести все простые числа в промежутке от 0 до 100</p>
+    <br>
+    <p>Результат: </p>
+		<script>
+			var i = 0;
+			var n = 100;
+			while(i <= n){
+				document.write(i++ + " ");
+			}
+		</script>
+    <hr>
+    <h3>Задача №2,3</h3>
+    <p>С этого урока начинаем работать с функционалом интернет-магазина. Предположим, есть сущность корзины. Нужно реализовать функционал подсчета стоимости корзины в зависимости от находящихся в ней товаров.</p>
+    <p>Товары в корзине хранятся в массиве. Задачи:</p>
+    <p>a) Организовать такой массив для хранения товаров в корзине;</p>
+    <p>b) Организовать функцию countBasketPrice, которая будет считать стоимость корзины.</p>
+
+    <script>
+    let basket = [{"product_name": "RUFFLE OFF SHOULDER","price": 55,"amount": 10},
+            {"product_name": "MANGO PEOPLE T-SHIRT","price": 60,"amount": 8},
+            {"product_name": "MANGO PEOPLE T-SHIRT","price": 70,"amount": 7},
+            {"product_name": "MANGO PEOPLE T-SHIRT","price": 72,"amount": 1},
+            {"product_name": "MANGO PEOPLE T-SHIRT","price": 45,"amount": 5}];
+        function countBasketPrice(basket) {
+            let totalAmount = 0;
+            let totalPrice = 0;
+            for (let item in basket) {
+              totalAmount += +basket[item]['amount'];
+              totalPrice += (+basket[item ['price']) * (+basket[item]['amount']);
+            }
+            return `В корзине ${ totalAmount } товара на сумму ${ totalPrice }$`;
+        }
+        document.write(JSON.stringify(basket)+ "<br/>");
+        document.write(countBasketPrice(basket));
+    </script>
+
+
+	  <hr>
+    <h3>Задача №4</h3>
+
+		<p>Вывести с помощью цикла for числа от 0 до 9, не используя тело цикла. Выглядеть это должно так:<br>
+    <br>for(…){// здесь пусто}</p>
+    <br>
+    <p>Результат: </p>
+		<script>
+			for(var number = 0; number <= 9;
+      document.write(number++ + " ")){}
+		</script>
+
+    <hr>
+    <h3>Задача №5</h3>
+		<p>Нарисовать пирамиду с помощью console.log, как показано на рисунке, только у вашей пирамиды должно быть 20 рядов, а не 5:</p>
+    <p>x</p>
+    <p>xx</p>
+    <p>xxx</p>
+    <p>xxxx</p>
+    <p>xxxxx</p>
+    <script>
+			for(var i = 1, pyramid = " "; i <= 20; i++){
+				pyramid += "x";
+				console.log(pyramid);
+			}
+		</script>
+
 
   </body>
 </html>
