@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .board_text {
+            display: inline-flex;
+        }
+        .board {
+            width: 400px;
+            height: 400px;
+            background-color: black;
+            border: 1px grey solid;
+        }
+        .cell {
+            width: 50px;
+            height: 50px;
+            float: left;
+            text-align: center;
+            line-height: 50px;
+        }
+        .number_cell {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px
+        }
+        .product {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    function changeColor(color) {
+        color === 'grey' ? color = 'black' : color = 'grey';
+        return color;
+    }
+    const board_text = document.createElement('div');
+    board_text.className = 'board_text';
+
+    const board = document.createElement('div');
+    board.className = 'board';
+
+    document.body.append(board_text);
+    document.querySelector('.board_text').append(board);
+
+    for (let i = 1, bloom = 'black'; i < 65; i++) {
+        let elem = document.createElement('div');
+            elem.className = 'cell';
+            elem.id = i.toString();
+            elem.style.backgroundColor = bloom;
+        if (i % 8 !== 0) bloom = changeColor(bloom);
+        let board = document.querySelector('.board');
+        board.appendChild(elem);
+    }
+    for (let i = 1; i < 9; i++) {
+        let elem = document.createElement('div');
+            elem.className = 'cell';
+            elem.innerText = i;
+            board.appendChild(elem);
+    }
+    let labels = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+    let labelsColumn = document.createElement('div');
+        labelsColumn.className = 'column';
+    for (const label of labels.reverse()) {
+        let elem = document.createElement('div');
+            elem.className = 'number_cell';
+            elem.innerText = label;
+            labelsColumn.appendChild(elem);
+    }
+    document.querySelector('.board_text').insertBefore(labelsColumn, board);
+</script>
+
+<script>
+    let arr = [
+    {"product_id": 11,"product_title": "MANGO PEOPLE T-SHIRT","price": 50,"amount": 10,},
+    {"product_id": 12,"product_title": "MANGO PEOPLE T-SHIRT","price": 10,"amount": 20,},
+    {"product_id": 13,"product_title": "MANGO PEOPLE T-SHIRT","price": 300,"amount": 3,},
+    {"product_id": 14,"product_title": "MANGO PEOPLE T-SHIRT","price": 30,"amount": 1,}
+];
+    function renderBasket(products) {
+        const basket = document.createElement('div');
+        basket.className = 'basket';
+        document.body.append(basket);
+        var total_price = 0;
+        for (const item of products) {
+            const product = document.createElement('div');
+            product.className = 'product';
+            const title = document.createElement('h5');
+            const price = document.createElement('p');
+            const item_price = item.price * item.amount;
+            total_price += item_price;
+            title.innerText = item.product_title;
+            price.innerText = `Количество товаров: ${item.amount};  Цена за штуку: ${item.price}; Сумма: ${item_price} рублей`;
+            product.append(title, price);
+            document.querySelector('.basket').append(product);
+        }
+        const total = document.createElement('h3');
+        total.innerText = `Общая стоимость товаров: ${total_price} рублей`;
+        document.querySelector('.basket').append(total);
+    }
+    if (arr.length !== 0){
+        renderBasket(arr)
+    } else {
+        const basket = document.createElement('div');
+        basket.className = 'basket';
+        document.body.append(basket);
+        const total = document.createElement('h5');
+        total.innerText = `Корзина пуста`;
+        document.querySelector('.basket').append(total);
+    }
+</script>
+
+
+</body>
+</html>

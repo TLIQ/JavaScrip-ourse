@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> Домашнее заданее № 6</title>
+    <script src="script.js"></script>
+    <style>
+      #box, #big {
+   width: 300px;
+   height: 300px;
+   border: 2px solid black;
+   box-sizing: border-box;
+   margin-left:50px;
+}
+
+#big{
+   float: left;
+}
+
+.image {
+   width: 132px;
+   height: 132px;
+   margin-left:15px;
+}
+
+.no-image {
+   color: grey;
+   background-color: #e9f1e9;
+   font-weight: 800;
+   font-size: 20px;
+   font-style: italic;
+   text-align: center;
+   padding-top: 190px;
+}
+
+.arrow {
+   float: left;
+   font-size: 38px;
+   margin-top: 181px;
+   margin-left: 50px;
+}
+
+.div-image {
+   clear: both;
+   padding-left: 54px;
+   padding-top: 20px;
+}
+
+.active-image {
+   border-bottom: 2px solid red;
+   box-sizing: border-box;
+}
+
+#id-shop-basket {
+   float: left;
+   width: 25%;
+}
+
+#id-shop-container {
+   float: right;
+   width: 75%;
+}
+
+.shop-image {
+   width: 120px;
+   height: 120px;
+   margin-bottom: 2px;
+   color: grey;
+   background-color: #e9f1e9;
+   font-weight: 800;
+   font-size: 16px;
+   font-style: italic;
+   text-align: center;
+}
+
+.shop-item {
+   float: left;
+   margin-left: 3px;
+   margin-bottom: 10px;
+}
+    </style>
+  </head>
+  <body>
+    <h3>Задание с каруселью</h3>
+    <hr>
+   <div>
+      <button class="arrow" id="arrowBack">&#9668;</button>
+      <div id="big"></div>
+      <button class="arrow" id="arrowNext">&#9658;</button>
+   </div>
+   <div class="div-image">
+      <img src="images/small/1.jpg" class="image">
+      <img src="images/small/2.jpg" class="image">
+      <img src="images/small/3.jpg" class="image">
+   </div>
+  <br>
+  <br>
+   <h3>Задание с корзиной</h3>
+   <hr>
+   <div>
+      <div id="id-shop-basket">
+         <b>Корзина:</b>
+         <div id="id-shop-basket-item"></div>
+         <br>
+         <div id='shop-cost-all'>Сумма заказа: 0 руб.</div>
+      </div>
+      <div id="id-shop-container">
+         <div class="shop-item" id="id-shop-item-1">
+            <div class="shop-image">Футболка</div>
+            <span class="shop-cost" id="id-shop-cost-1">100 руб.</span> <button class='shop-button'>Купить</button>
+         </div>
+         <div class="shop-item" id="id-shop-item-2">
+            <div class="shop-image">Куртка</div>
+            <span class="shop-cost" id="id-shop-cost-2">200 руб.</span> <button class='shop-button'>Купить</button>
+         </div>
+         <div class="shop-item" id="id-shop-item-3">
+            <div class="shop-image">Шапка</div>
+            <span class="shop-cost" id="id-shop-cost-3">300 руб.</span> <button class='shop-button'>Купить</button>
+         </div>
+         <div class="shop-item" id="id-shop-item-4">
+            <div class="shop-image">Пальто</div>
+            <span class="shop-cost" id="id-shop-cost-4">400 руб.</span> <button class='shop-button'>Купить</button>
+         </div>
+         <div class="shop-item" id="id-shop-item-5">
+            <div class="shop-image">шарф</div>
+            <span class="shop-cost" id="id-shop-cost-5">500 руб.</span> <button class='shop-button'>Купить</button>
+         </div>
+      </div>
+   </div>
+
+
+
+
+  </body>
+</html>
